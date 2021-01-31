@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="constraint_layout" type="id"/>
+    <item name="prenom_edit_text" type="id"/>
+    <item name="nom_edit_text" type="id"/>
+    <item name="age_edit_text" type="id"/>
+    <item name="domaine_edit_text" type="id"/>
+    <item name="phone_edit_text" type="id"/>
+    <item name="button_valider" type="id"/>
+</resources>
