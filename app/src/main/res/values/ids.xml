@@ -7,4 +7,9 @@
     <item name="domaine_edit_text" type="id"/>
     <item name="phone_edit_text" type="id"/>
     <item name="button_valider" type="id"/>
+    <item name="prenom_label" type="id"/>
+    <item name="nom_label" type="id"/>
+    <item name="age_label" type="id"/>
+    <item name="domaine_label" type="id"/>
+    <item name="phone_label" type="id"/>
 </resources>

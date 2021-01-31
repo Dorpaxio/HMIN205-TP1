@@ -5,10 +5,7 @@ import android.content.res.ColorStateList;
 import android.text.Editable;
 import android.text.InputType;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.*;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,15 +25,15 @@ public class MainActivity extends AppCompatActivity {
                 ConstraintLayout.LayoutParams.MATCH_PARENT));
         layout.setId(R.id.constraint_layout);
 
-        EditText prenom = addEditTextToLayout(R.id.prenom_edit_text, R.string.edit_prenom,
+        EditText prenom = addEditTextToLayout(R.id.prenom_edit_text, R.id.prenom_label, R.string.edit_prenom,
                 layout, InputType.TYPE_CLASS_TEXT, null);
-        EditText nom = addEditTextToLayout(R.id.nom_edit_text, R.string.edit_name,
+        EditText nom = addEditTextToLayout(R.id.nom_edit_text, R.id.nom_label, R.string.edit_name,
                 layout, InputType.TYPE_CLASS_TEXT, prenom);
-        EditText age = addEditTextToLayout(R.id.age_edit_text, R.string.edit_age,
+        EditText age = addEditTextToLayout(R.id.age_edit_text, R.id.age_label, R.string.edit_age,
                 layout, InputType.TYPE_CLASS_NUMBER, nom);
-        EditText domaine = addEditTextToLayout(R.id.domaine_edit_text, R.string.edit_domaine,
+        EditText domaine = addEditTextToLayout(R.id.domaine_edit_text, R.id.domaine_label, R.string.edit_domaine,
                 layout, InputType.TYPE_CLASS_TEXT, age);
-        EditText phone = addEditTextToLayout(R.id.phone_edit_text, R.string.edit_phone,
+        EditText phone = addEditTextToLayout(R.id.phone_edit_text, R.id.phone_label, R.string.edit_phone,
                 layout, InputType.TYPE_CLASS_PHONE, domaine);
 
         Button button = new Button(this);
@@ -45,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
         layoutParams.setMargins(0, 16, 16, 0);
         layoutParams.endToEnd = layout.getId();
         layoutParams.topToBottom = phone.getId();
-        button.setTextColor(R.color.colorPrimary);
         button.setText(R.string.button_valider);
-        button.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.colorPrimaryDark));
+        button.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.colorAccent));
         button.setLayoutParams(layoutParams);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,18 +56,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(layout);
     }
 
-    private EditText addEditTextToLayout(int id, int hint, ConstraintLayout layout, int inputType, View parent) {
+    private EditText addEditTextToLayout(int id, int labelId, int label, ConstraintLayout layout, int inputType, View parent) {
+        TextView textView = new TextView(this);
+        textView.setText(label);
+        ConstraintLayout.LayoutParams textLayoutParams =
+                new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT,
+                        ConstraintLayout.LayoutParams.WRAP_CONTENT);
+        textLayoutParams.setMargins(16, 16, 0, 0);
+        textLayoutParams.startToStart = layout.getId();
+        if (parent != null)
+            textLayoutParams.topToBottom = parent.getId();
+        else
+            textLayoutParams.topToTop = layout.getId();
+        textView.setLayoutParams(textLayoutParams);
+        textView.setId(labelId);
+        layout.addView(textView);
+
         EditText editText = new EditText(this);
         editText.setId(id);
         ConstraintLayout.LayoutParams layoutParams =
                 new ConstraintLayout.LayoutParams(0, ConstraintLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(16, 16, 16, parent == null ? 16 : 0);
+        layoutParams.setMargins(16, 16, 16, 16);
         layoutParams.startToStart = layout.getId();
         layoutParams.endToEnd = layout.getId();
-        if (parent != null)
-            layoutParams.topToBottom = parent.getId();
+        layoutParams.topToBottom = textView.getId();
+
         editText.setLayoutParams(layoutParams);
-        editText.setHint(hint);
         editText.setInputType(inputType);
         layout.addView(editText);
         return editText;
