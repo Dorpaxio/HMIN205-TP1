@@ -2,12 +2,14 @@ package io.dorpax.cours.hmin205.tp1;
 
 import android.content.Intent;
 import android.view.View;
+import android.webkit.PermissionRequest;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class DisplayInfosActivity extends AppCompatActivity {
 
+    private Infos infos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,7 +17,8 @@ public class DisplayInfosActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         EditText et = (EditText) findViewById(R.id.editTextTextMultiLine);
-        et.setText(intent.getSerializableExtra(MainActivity.EXTRA_INFOS).toString());
+        infos = (Infos) intent.getSerializableExtra(MainActivity.EXTRA_INFOS);
+        et.setText(infos.toString());
     }
 
     public void onClickBack(View v) {
@@ -23,6 +26,8 @@ public class DisplayInfosActivity extends AppCompatActivity {
     }
 
     public void onClickOk(View v) {
-        startActivity(new Intent(this, MainActivity2.class));
+        Intent intent = new Intent(this, MainActivity2.class);
+        intent.putExtra(MainActivity2.EXTRA_PHONE, infos.getPhone());
+        startActivity(intent);
     }
 }
