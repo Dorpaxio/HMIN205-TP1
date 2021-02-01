@@ -7,5 +7,6 @@
     <string name="edit_phone">Numéro de téléphone</string>
     <string name="button_valider">Valider</string>
     <string name="dialog_validation_title">Validation</string>
-    <string name="dialog_validation_message">Vous avez appuyé sur valider !</string>
+    <string name="dialog_validation_message">C\'est validé ?</string>
+    <string name="no">Non</string>
 </resources>

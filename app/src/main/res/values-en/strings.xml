@@ -7,6 +7,7 @@
     <string name="edit_domaine">Skill Area</string>
     <string name="edit_phone">Phone Number</string>
     <string name="button_valider">Done</string>
-    <string name="dialog_validation_message">You\'ve done it !</string>
+    <string name="dialog_validation_message">Do you agree ?</string>
     <string name="dialog_validation_title">Done !</string>
+    <string name="no">No</string>
 </resources>
