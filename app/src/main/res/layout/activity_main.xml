@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/prenom_editext"
             android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/nom_editext"
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/domaine_editext"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/textView5" android:hint="@string/edit_domaine"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:inputType="numberSigned"
             android:ems="10"
-            android:id="@+id/editTextNumberSigned"
+            android:id="@+id/age_editext"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="16dp"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editTextPhone"
+            android:id="@+id/phone_editext"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textView6"
             android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:hint="@string/edit_phone"
@@ -63,7 +63,7 @@
             android:layout_width="190dp"
             android:layout_height="55dp" android:id="@+id/button3"
             android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPhone" android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/phone_editext" android:backgroundTint="@color/colorPrimary"
             android:textColor="@android:color/primary_text_dark" android:onClick="onClick"/>
     <TextView
             android:text="@string/edit_prenom"
@@ -77,23 +77,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView3"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" android:layout_marginTop="16dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/prenom_editext" android:layout_marginTop="16dp"/>
     <TextView
             android:text="@string/edit_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView4"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"/>
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/nom_editext"/>
     <TextView
             android:text="@string/edit_domaine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView5"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned"/>
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/age_editext"/>
     <TextView
             android:text="@string/edit_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView6"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"/>
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/domaine_editext"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

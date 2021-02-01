@@ -10,4 +10,6 @@
     <string name="dialog_validation_message">Do you agree ?</string>
     <string name="dialog_validation_title">Done !</string>
     <string name="no">No</string>
+    <string name="your_infos">Your informations</string>
+    <string name="back">Back</string>
 </resources>
