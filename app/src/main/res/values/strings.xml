@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">TP1</string>
+    <string name="app_name">Tchoutchou</string>
+    <string name="travels">Trajets</string>
+    <string name="from">de</string>
+    <string name="to">à</string>
+    <string name="search">Chercher un trajet</string>
+    <string name="departure">Départ</string>
+    <string name="arrival">Arrivée</string>
+    <string name="research">Chercher</string>
 </resources>
